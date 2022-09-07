@@ -14,17 +14,14 @@ class ListView2Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('ListView tipo 2'),
+          title: const Text('ListViewType2'),
         ),
-        body: ListView(
-          children: [
-            ...optionsMenu
-                .map((game) => ListTile(
-                      title: Text(game),
-                      trailing: const Icon(Icons.arrow_forward_ios_outlined),
-                    ))
-                .toList()
-          ],
+        body: ListView.separated(
+          itemCount: optionsMenu.length,
+          itemBuilder: (context, index) => ListTile(
+              title: Text(optionsMenu[index]),
+              trailing: const Icon(Icons.arrow_forward_ios_outlined)),
+          separatorBuilder: (_, __) => const Divider(),
         ));
   }
 }
