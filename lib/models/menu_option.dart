@@ -8,7 +8,7 @@ class MenuOption {
 
   MenuOption(
       {required this.route,
-      required this.icon,
+      required this.screen,
       required this.name,
-      required this.screen});
+      required this.icon});
 }
